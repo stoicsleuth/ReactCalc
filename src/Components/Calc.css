@@ -1,0 +1,263 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font: 100 14px 'Encode Sans Semi Expanded';
+}
+
+button {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+}
+
+button:active {
+  box-shadow: inset 0px 0px 80px 0px rgba(0, 0, 0, 0.25);
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  width: 600px;
+  height: 550px;
+  position: relative;
+}
+
+.calculator {
+  width: 100%;
+  height: 100%;
+  background: black;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper .calculator {
+  box-shadow: 4px 3px 16px -2px #AA9;
+}
+
+.calculator-display {
+  color: white;
+  background: #2b2b2b;
+  line-height: 130px;
+  font-size: 6em;
+
+  flex: 1;
+}
+
+.auto-scaling-text {
+  display: inline-block;
+}
+
+.calculator-display .auto-scaling-text {
+  padding: 0 30px;
+  position: absolute;
+  right: 0;
+  top: -13px;
+  transform-origin: right;
+}
+
+.calculator-keypad {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.calculator .input-keys {
+  flex: 3
+}
+
+.calculator .function-keys {
+  display: flex;
+}
+
+.calculator .digit-keys,
+.calculator .scientific-keys {
+  background: white;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.calculator-key {
+  width: 150px;
+  height: 80px;
+  border-top: 1px solid #777;
+  border-right: 1px solid #666;
+  text-align: center;
+  line-height: 80px;
+}
+
+.calculator .function-keys .calculator-key {
+  font-size: 2em;
+}
+
+.calculator .function-keys .key-multiply {
+  line-height: 50px;
+}
+
+.calculator .digit-keys .calculator-key,
+.calculator .scientific-keys .calculator-key {
+  font-size: 2.25em;
+}
+
+
+.calculator .operator-keys .calculator-key {
+  color: black;
+  border-right: 0 !important;
+  font-size: 3em;
+}
+
+
+.calculator .scientific-keys {
+  display: flex;
+}
+
+
+.calculator .function-keys {
+  background: white
+}
+
+.calculator .operator-keys {
+  background: white;
+  color: black;
+  flex: 1
+}
+
+.calculator .key-equals {
+  background: rgb(183, 43, 0) !important;
+  font-size: 2.5em;
+}
+
+.calculator .key-equals {
+  color: white !important
+}
+
+.calculator .key-switch {
+  width: 100%;
+  background: white;
+  font-size: 2em;
+  border-right: 0 !important;
+}
+
+.calculator .operator-keys .key-switch-back {
+  font-size: 2em;
+}
+
+.wrapper .light-button {
+  position: absolute;
+  background: #d2d2d2;
+  right: 100px;
+  top: 10px;
+  border: 2px solid white;
+  padding: 5px 30px;
+  font-size: 2em;
+  color: white;
+  font-weight: 300;
+}
+
+.wrapper .dark-button {
+  position: absolute;
+  background: #3c3c3c;
+  right: 330px;
+  top: 10px;
+  border: 2px solid white;
+  padding: 5px 30px;
+  font-size: 2em;
+  color: white;
+  font-weight: 300;
+}
+
+
+.calculator-display .operator-current {
+  position: absolute;
+  right: 34px;
+  top: 55px;
+  font-size: 0.6em;
+  color: #bbbbbb;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .App {
+    width: 300px;
+    height: 389px;
+  }
+
+  .calculator-display {
+    line-height: 116px;
+    font-size: 3em;
+  }
+
+  .calculator .input-keys {
+    flex: 4 1;
+  }
+
+  .calculator .digit-keys .calculator-key,
+  .calculator .operator-keys .calculator-key,
+  .calculator .scientific-keys .calculator-key {
+    width: 75px;
+    height: 53px;
+    line-height: 60px;
+    font-size: 1.5em;
+  }
+
+  .wrapper .light-button {
+    position: inherit;
+    width: 150px;
+    padding: 5px 6px;
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+
+  .wrapper {
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .wrapper .dark-button {
+    position: inherit;
+    width: 150px;
+    border: 2px solid white;
+    padding: 5px 6px;
+    font-size: 1.5em;
+  }
+
+  .calculator .key-switch {
+    height: 53px;
+    line-height: 60px;
+    font-size: 1.5em;
+  }
+
+  .switch-buttons {
+    display: flex;
+  }
+
+  .calculator-display .operator-current {
+    position: absolute;
+    right: 30px;
+    top: 52px;
+    font-size: 0.8em;
+    color: #bbbbbb;
+  }
+}
